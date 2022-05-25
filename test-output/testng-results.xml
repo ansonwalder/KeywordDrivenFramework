@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-05-25T13:12:14 IST" name="KeywordDrivenSuite" finished-at="2022-05-25T13:12:28 IST" duration-ms="13753">
+    <groups>
+    </groups>
+    <test started-at="2022-05-25T13:12:14 IST" name="KeywordDrivenTest" finished-at="2022-05-25T13:12:28 IST" duration-ms="13753">
+      <class name="com.qa.testcases.CreateNewAccountTest">
+        <test-method signature="createNewAccountTest()[pri:0, instance:com.qa.testcases.CreateNewAccountTest@49049a04]" started-at="2022-05-25T13:12:23 IST" name="createNewAccountTest" finished-at="2022-05-25T13:12:28 IST" duration-ms="5013" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createNewAccountTest -->
+      </class> <!-- com.qa.testcases.CreateNewAccountTest -->
+      <class name="com.qa.testcases.LoginTest">
+        <test-method signature="loginTest()[pri:0, instance:com.qa.testcases.LoginTest@53ce1329]" started-at="2022-05-25T13:12:14 IST" name="loginTest" finished-at="2022-05-25T13:12:23 IST" duration-ms="8688" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+      </class> <!-- com.qa.testcases.LoginTest -->
+    </test> <!-- KeywordDrivenTest -->
+  </suite> <!-- KeywordDrivenSuite -->
+</testng-results>
