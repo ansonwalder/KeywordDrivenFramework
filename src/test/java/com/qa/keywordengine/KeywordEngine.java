@@ -22,7 +22,7 @@ public class KeywordEngine {
 	public static XSSFWorkbook workbook;
 	public static XSSFSheet sheet;
 	public final String SCENARIO_SHEET_PATH = ".\\src\\test\\resources\\TestSteps.xlsx";
-	String locatorName;
+	String locatorType;
 	String locatorValue;
 	String action;
 	String value;
@@ -44,16 +44,14 @@ public class KeywordEngine {
 
 		sheet = workbook.getSheet(sheetName);
 		for (int i = 1; i <= sheet.getLastRowNum(); i++) {
-			String locator = sheet.getRow(i).getCell(1).getStringCellValue().trim();
-			if (!locator.equalsIgnoreCase("NA")) {
-				locatorName = locator.split("=")[0].trim();
-				locatorValue = locator.split("=")[1].trim();
-			}
-			action = sheet.getRow(i).getCell(2).getStringCellValue().trim();
+			locatorType = sheet.getRow(i).getCell(1).getStringCellValue().trim();
+			locatorValue = sheet.getRow(i).getCell(2).getStringCellValue().trim();
+
+			action = sheet.getRow(i).getCell(3).getStringCellValue().trim();
 			try {
-				value = sheet.getRow(i).getCell(3).getStringCellValue().trim();
+				value = sheet.getRow(i).getCell(4).getStringCellValue().trim();
 			} catch (Exception e) {
-				value = String.valueOf((long) sheet.getRow(i).getCell(3).getNumericCellValue());
+				value = String.valueOf((long) sheet.getRow(i).getCell(4).getNumericCellValue());
 			}
 
 			switch (action) {
@@ -94,8 +92,8 @@ public class KeywordEngine {
 				break;
 			}
 
-			if (locatorName != null) {
-				switch (locatorName) {
+			if (locatorType != null) {
+				switch (locatorType) {
 				case "id":
 					System.out.println("id");
 					element = driver.findElement(By.id(locatorValue));
@@ -105,7 +103,7 @@ public class KeywordEngine {
 					} else if (action.equalsIgnoreCase("Click")) {
 						element.click();
 					}
-					locatorName = null;
+					locatorType = null;
 					break;
 				case "name":
 					System.out.println("name");
@@ -116,7 +114,7 @@ public class KeywordEngine {
 					} else if (action.equalsIgnoreCase("Click")) {
 						element.click();
 					}
-					locatorName = null;
+					locatorType = null;
 					break;
 				case "xpath":
 					System.out.println("xpath");
@@ -127,16 +125,16 @@ public class KeywordEngine {
 					} else if (action.equalsIgnoreCase("Click")) {
 						element.click();
 					}
-					locatorName = null;
+					locatorType = null;
 					break;
 				case "linkText":
 					System.out.println("linkText");
 					element = driver.findElement(By.linkText(locatorValue));
 					element.click();
-					locatorName = null;
+					locatorType = null;
 					break;
 				default:
-					locatorName = null;
+					locatorType = null;
 					break;
 				}
 			}
