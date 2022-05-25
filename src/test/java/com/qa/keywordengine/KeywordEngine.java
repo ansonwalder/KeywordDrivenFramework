@@ -21,7 +21,7 @@ public class KeywordEngine {
 	FileInputStream fis;
 	public static XSSFWorkbook workbook;
 	public static XSSFSheet sheet;
-	public final String SCENARIO_SHEET_PATH = "C:\\Users\\Teena Anitha Lobo\\Desktop\\TestSteps.xlsx";
+	public final String SCENARIO_SHEET_PATH = ".\\src\\test\\resources\\TestSteps.xlsx";
 	String locatorName;
 	String locatorValue;
 	String action;
